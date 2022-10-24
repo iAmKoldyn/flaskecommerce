@@ -1,0 +1,17 @@
+
+# Ignore Logs
+logs
+*.log
+
+# Ignore the build directory
+/dist
+/cache
+/env
+/venv
+# The file containing environment variables 
+.env
+
+# Ignore IDE specific files
+.idea/
+.vscode/
+*.sw*
