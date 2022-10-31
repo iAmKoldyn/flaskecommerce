@@ -13,7 +13,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 buplishable_key = os.environ.get('BUPLISHABLE_KEY')
-stripe.api_key = os.environ.get('sk_test_9JlhVB6qwjcRdYzizjdwgIo0Dt00N55uxbWy')
+stripe.api_key = os.environ.get('STRIPE.API_KEY')
 
 
 @app.route('/payment',methods=['POST'])

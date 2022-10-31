@@ -1,0 +1,106 @@
+// Variables
+$color_grey: #BFBFBF;
+$color_green: #B3D23F;
+$color_dark: #1A1A1A;
+$color_light: #FAFAFA;
+$color_background: #2D3235;
+$default_timer: 987ms;
+
+// Resets
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+  
+body {
+  font-family: Roboto;
+  height: 80vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color_background;
+}
+
+// Let's write some real CSS??
+.button {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  padding-right: 40px;
+  
+  &:hover {
+    & .button__border-circle { 
+      transform: translateX(60px);
+    }
+    
+    & .button__mask-circle {
+      clip-path: circle(25px at 85px);
+    }
+  }
+}
+
+.button__text {
+  z-index: 1;
+  font-size: 14px;
+  margin-right: -18px;
+  color: $color_light;
+  letter-spacing: 0.05em;
+}
+
+.button__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.button__arrow {
+  left: 35px;
+  height: 3px;
+  width: 50px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  background-color: $color_green;
+  
+  &:after {
+    content: '';
+    width: 0; 
+    height: 0; 
+    top: -5px;
+    right: -7px;
+    position: absolute;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 7px solid $color_green;
+  }
+}
+
+.button__border-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid $color_grey;
+  transition: transform $default_timer;
+}
+
+.button__mask-circle {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: circle(25px);
+  transition: clip-path $default_timer;
+}
+
+.button__small-circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  transform: translateX(60px);
+  background-color: $color_green;
+}

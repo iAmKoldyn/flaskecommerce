@@ -169,6 +169,7 @@
          {% endfor %}
          {% endif %}
          {% if products.has_next %}
+         <!-- отвечает за следующие товары -->
          <a href="{{url_for('home', page=products.next_num)}}"class="btn btn-sm btn-outline-info">next</a>
        {% endif %}
         </div>
