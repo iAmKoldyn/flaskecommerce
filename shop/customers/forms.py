@@ -15,7 +15,7 @@ class CustomerRegisterForm(FlaskForm):
     country = StringField('Страна: ', [validators.DataRequired()])
     city = StringField('Город: ', [validators.DataRequired()])
     contact = StringField('Телефон: ', [validators.DataRequired()])
-    address = StringField('Адресс: ', [validators.DataRequired()])
+    address = StringField('Адрес: ', [validators.DataRequired()])
     zipcode = StringField('Почтовый индекс: ', [validators.DataRequired()])
 
     profile = FileField('Profile', validators=[FileAllowed(['jpg','png','jpeg','gif'], 'Только картинки')])
