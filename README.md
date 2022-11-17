@@ -40,6 +40,7 @@ To start you need to follow the path `flaskecommerce/` activate virtual environm
 
 - [Astan Pataraya](https://gitlab.com/pelmenin)
 - [Astan Pataraya](https://github.com/iAmKoldyn)
+- [Alexander Zagorulko](https://github.com/azy3301)
 
 
 ### Issues
