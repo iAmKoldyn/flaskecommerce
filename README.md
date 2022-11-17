@@ -53,7 +53,6 @@ To start you need to follow the path `flaskecommerce/` activate virtual environm
 
 ### Team members
 
-- [Astan Pataraya](https://gitlab.com/pelmenin)
 - [Astan Pataraya](https://github.com/iAmKoldyn)
 - [Alexander Zagorulko](https://github.com/azy3301)
 
