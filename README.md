@@ -1,10 +1,25 @@
-# Ecommerce
+# Flask Shop - An Amazing Project
+
 
 ![flask-shop](Тут будет гифка по функционалу)
+
 
 ### About
 
 This is a large ecommerce store project of a small initiative group. You'll never see something better in a time frame like this
+
+
+## ScreenShot
+here will be screen shots
+
+
+## Feature
+
+* large flask project structure, easy to extend and secondary develop
+* always update and use newest packages, python features
+* multi language and locallization support
+* product ready, good performance
+
 
 ### Requirements
 
