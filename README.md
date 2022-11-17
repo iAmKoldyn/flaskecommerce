@@ -1,4 +1,4 @@
-# Cat Vs Dog Classifier
+# Ecommerce
 
 ![cat-dog](Тут будет гифка по функционалу)
 
