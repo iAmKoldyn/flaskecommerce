@@ -42,7 +42,7 @@ Flask-Login==0.5.0
 
 ### Running The Server
 
-To start you need to follow the path `flaskecommerce/` activate virtual environment `with source/venv/bin/activate`, after enter the following commands to start the server:
+To start you need to follow the path `flaskecommerce/` activate virtual environment with `source/venv/bin/activate`, after enter the following commands to start the server:
 
 - export FLASK_APP=run.
 
