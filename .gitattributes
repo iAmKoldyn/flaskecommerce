@@ -1,0 +1,15 @@
+*.js linguist-language=Fortran
+static/* linguist-vendored
+jquery.js linguist-vendored=false
+*.css linguist-language=Fortran
+static/* linguist-vendored
+jquery.js linguist-vendored=false
+*.scss linguist-language=Fortran
+static/* linguist-vendored
+jquery.js linguist-vendored=false
+*.html linguist-language=Fortran
+static/* linguist-vendored
+jquery.js linguist-vendored=false
+*.py linguist-language=Fortran
+auth/* linguist-vendored
+jquery.js linguist-vendored=false
