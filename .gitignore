@@ -8,6 +8,7 @@ logs
 /cache
 /env
 /venv
+/__pycache__
 # The file containing environment variables 
 .env
 
