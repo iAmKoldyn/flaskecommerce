@@ -1,5 +1,6 @@
 let a = 0;
-function next() {
+function next()
+{
     if ((a >= 0) && (a < document.getElementsByClassName("swiper-wrapper").length - 1)){
         document.getElementsByClassName("swiper-wrapper")[a].className = "swiper-wrapper";
         document.getElementsByClassName("list-inline-item")[a].className = "list-inline-item";
@@ -8,7 +9,8 @@ function next() {
         document.getElementsByClassName("list-inline-item")[a].className += " item-active";
     }
 }
-function prev() {
+function prev()
+{
     if ((a > 0) && (a <= document.getElementsByClassName("swiper-wrapper").length)){
         document.getElementsByClassName("swiper-wrapper")[a].className = "swiper-wrapper";
         document.getElementsByClassName("list-inline-item")[a].className = "list-inline-item";
@@ -17,7 +19,8 @@ function prev() {
         document.getElementsByClassName("list-inline-item")[a].className += " item-active";
     }
 }
-function scrollToTop(scrollDuration) {
+function scrollToTop(scrollDuration)
+{
     var scrollStep = -window.scrollY / (scrollDuration / 15),
         scrollInterval = setInterval(function(){
             if (window.scrollY !== 0) {
