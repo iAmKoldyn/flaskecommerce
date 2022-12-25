@@ -26,8 +26,11 @@
 }
 
 .popup_img {
-    width: 100%;
-    height: 30px;
+    margin-left: 90%;
+    /*margin-top: 5px;*/
+    /*margin-bottom: 5px;*/
+    /*width: 100%;*/
+    /*height: 30px;*/
 
     display: flex;
     justify-content: right;
@@ -37,13 +40,13 @@
 .login_popup_img {
     width: 15px;
     height: 15px;
-    margin-right: 1.3em;
+    /*margin-right: 1.3em;*/
 }
 
 .sign_up_popup_img {
     width: 15px;
     height: 15px;
-    margin-right: 1em;
+    /*margin-right: 1em;*/
 }
 
 .popup_img img:hover {
@@ -54,19 +57,21 @@
 
 .form_text {
     display: flex;
+    margin-top: 10px;
+    margin-right: 10px;
 }
 
 .login_popup, .sign_up_popup{
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     background-color: white;
     border-radius: 5px;
     z-index: 1000;
     opacity: 1 !important;
 }
 
-form h1 {
+.popup_all form h1 {
     margin-left: 2px;
     margin-right: 2px;
 }
@@ -77,17 +82,17 @@ form h1 {
     transition: .4s;
 }
 
-form {
+.popup_all form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-form * {
+.popup_all form * {
     color: black;
 }
 
-form input {
+.popup_all form input {
     background-color: #E6E6E6;
     border: none;
     border-radius: 5px;
@@ -100,7 +105,7 @@ form input {
     margin-top: 10px;
 }
 
-form button {
+.popup_all form button {
     margin-top: 25px;
 
     background-color: #D9D9D9;
@@ -111,24 +116,28 @@ form button {
     height: 33px;
 }
 
-form button * {
+.popup_all form button * {
     font-size: 12px;
 }
 
-button:hover {
+form button:hover {
     cursor: pointer;
 }
 
-p {
+.popup_all form p {
     font-size: 12px;
 }
 
-h1 {
+.popup_all form h1 {
     font-size: 12px;
     font-weight: 500;
     text-transform: uppercase;
 }
 
-label {
+.popup_all form label {
     margin-top: 35px;
+}
+
+.popup_img:hover {
+    cursor: pointer;
 }
