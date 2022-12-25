@@ -1,0 +1,62 @@
+* {
+    font-family: 'Graphik LCG', serif;
+    font-style: normal;
+    font-weight: 400;
+    color: #292828;
+}
+
+body, html {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login {
+    width: 500px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    background-color: #E6E6E6;
+    border: none;
+    border-radius: 5px;
+    outline-color: #D9D9D9;
+    padding: 20px;
+
+    width: 415px;
+    height: 55px;
+
+    margin-top: 14px;
+}
+
+button {
+    margin-top: 50px;
+
+    background-color: #E6E6E6;
+    border: none;
+    border-radius: 5px;
+
+    width: 140px;
+    height: 35px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+p {
+    font-size: 12px;
+}
+
+h1 {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+label {
+    margin-top: 35px;
+}
