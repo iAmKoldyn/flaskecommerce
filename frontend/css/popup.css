@@ -1,0 +1,143 @@
+.popup_all {
+    position: fixed;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    z-index: 10;
+    /*opacity: 0;*/
+
+    /*height: 50em;*/
+}
+
+.sign_up_popup {
+    display: none;
+    width: 600px;
+    height: 430px;
+}
+
+.login_popup {
+    display: flex;
+    width: 550px;
+    height: 350px;
+}
+
+.popup_img {
+    margin-left: 90%;
+    /*margin-top: 5px;*/
+    /*margin-bottom: 5px;*/
+    /*width: 100%;*/
+    /*height: 30px;*/
+
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.login_popup_img {
+    width: 15px;
+    height: 15px;
+    /*margin-right: 1.3em;*/
+}
+
+.sign_up_popup_img {
+    width: 15px;
+    height: 15px;
+    /*margin-right: 1em;*/
+}
+
+.popup_img img:hover {
+    opacity: .8;
+    transition: .4s;
+    cursor: pointer;
+}
+
+.form_text {
+    display: flex;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.login_popup, .sign_up_popup{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 5px;
+    z-index: 1000;
+    opacity: 1 !important;
+}
+
+.popup_all form h1 {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.login_text:hover, .sign_up_text:hover {
+    cursor: pointer;
+    color: #919191;
+    transition: .4s;
+}
+
+.popup_all form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popup_all form * {
+    color: black;
+}
+
+.popup_all form input {
+    background-color: #E6E6E6;
+    border: none;
+    border-radius: 5px;
+    outline-color: #D9D9D9;
+    padding: 20px;
+
+    width: 300px;
+    height: 40px;
+
+    margin-top: 10px;
+}
+
+.popup_all form button {
+    margin-top: 25px;
+
+    background-color: #D9D9D9;
+    border: none;
+    border-radius: 5px;
+
+    width: 110px;
+    height: 33px;
+}
+
+.popup_all form button * {
+    font-size: 12px;
+}
+
+form button:hover {
+    cursor: pointer;
+}
+
+.popup_all form p {
+    font-size: 12px;
+}
+
+.popup_all form h1 {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.popup_all form label {
+    margin-top: 35px;
+}
+
+.popup_img:hover {
+    cursor: pointer;
+}
