@@ -7,9 +7,10 @@ class Addproducts(Form):
     price = FloatField('Цена', [validators.DataRequired()])
     discount = IntegerField('Скидка', default=0)
     stock = IntegerField('Кол-во', [validators.DataRequired()])
+    size = IntegerField('Размер(не имеет значения)', [validators.DataRequired()])
     colors = StringField('Цвет', [validators.DataRequired()])
     discription = TextAreaField('Описание', [validators.DataRequired()])
-
+    gender = StringField('Гендер', [validators.DataRequired()])
     image_1 = FileField('Image 1',
                         validators=[FileRequired(), FileAllowed(['jpg', 'png', 'gif', 'jpeg']), 'Только изображение'])
     image_2 = FileField('Image 2',

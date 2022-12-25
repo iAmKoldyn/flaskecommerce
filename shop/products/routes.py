@@ -1,6 +1,7 @@
 from ast import literal_eval
 
 from flask import render_template, session, request, redirect, url_for, flash, current_app, make_response
+from flask_login import login_required
 from shop import app, db, photos, search
 from .models import Category, Brand, Addproduct
 from .forms import Addproducts
@@ -65,6 +66,7 @@ def get_category(id):
 
 
 @app.route('/addbrand', methods=['GET', 'POST'])
+@login_required
 def addbrand():
     if request.method == "POST":
         getbrand = request.form.get('brand')
@@ -77,6 +79,7 @@ def addbrand():
 
 
 @app.route('/updatebrand/<int:id>', methods=['GET', 'POST'])
+@login_required
 def updatebrand(id):
     if 'email' not in session:
         flash('Сначала войдите в аккаунт!', 'danger')
@@ -93,6 +96,7 @@ def updatebrand(id):
 
 
 @app.route('/deletebrand/<int:id>', methods=['GET', 'POST'])
+@login_required
 def deletebrand(id):
     brand = Brand.query.get_or_404(id)
     if request.method == "POST":
@@ -105,6 +109,7 @@ def deletebrand(id):
 
 
 @app.route('/addcat', methods=['GET', 'POST'])
+@login_required
 def addcat():
     if request.method == "POST":
         getcat = request.form.get('category')
@@ -117,6 +122,7 @@ def addcat():
 
 
 @app.route('/updatecat/<int:id>', methods=['GET', 'POST'])
+@login_required
 def updatecat(id):
     if 'email' not in session:
         flash('Login first please', 'danger')
@@ -133,6 +139,7 @@ def updatecat(id):
 
 
 @app.route('/deletecat/<int:id>', methods=['GET', 'POST'])
+@login_required
 def deletecat(id):
     category = Category.query.get_or_404(id)
     if request.method == "POST":
@@ -145,6 +152,7 @@ def deletecat(id):
 
 
 @app.route('/addproduct', methods=['GET', 'POST'])
+@login_required
 def addproduct():
     form = Addproducts(request.form)
     brands = Brand.query.all()
@@ -156,13 +164,15 @@ def addproduct():
         stock = form.stock.data
         colors = form.colors.data
         desc = form.discription.data
+        gender = form.gender.data
         brand = request.form.get('brand')
         category = request.form.get('category')
         image_1 = photos.save(request.files.get('image_1'), name=secrets.token_hex(10) + ".")
         image_2 = photos.save(request.files.get('image_2'), name=secrets.token_hex(10) + ".")
         image_3 = photos.save(request.files.get('image_3'), name=secrets.token_hex(10) + ".")
         addproduct = Addproduct(name=name, price=price, discount=discount, stock=stock, colors=colors, desc=desc,
-                                category_id=category, brand_id=brand, image_1=image_1, image_2=image_2, image_3=image_3)
+                                category_id=category, brand_id=brand, image_1=image_1, image_2=image_2, image_3=image_3,
+                                gender=gender)
         db.session.add(addproduct)
         flash(f'Продукт {name} был добавлен в базу', 'success')
         db.session.commit()
@@ -172,6 +182,7 @@ def addproduct():
 
 
 @app.route('/updateproduct/<int:id>', methods=['GET', 'POST'])
+@login_required
 def updateproduct(id):
     form = Addproducts(request.form)
     product = Addproduct.query.get_or_404(id)
@@ -179,6 +190,8 @@ def updateproduct(id):
     categories = Category.query.all()
     brand = request.form.get('brand')
     category = request.form.get('category')
+    gender = request.form.get('gender')
+    size = request.form.get('size')
     if request.method == "POST":
         product.name = form.name.data
         product.price = form.price.data
@@ -188,6 +201,8 @@ def updateproduct(id):
         product.desc = form.discription.data
         product.category_id = category
         product.brand_id = brand
+        product.gender = gender
+        product.size = size
         if request.files.get('image_1'):
             try:
                 os.unlink(os.path.join(current_app.root_path, "static/images/" + product.image_1))
@@ -222,7 +237,8 @@ def updateproduct(id):
                            brands=brands, categories=categories)
 
 
-@app.route('/deleteproduct/<int:id>', methods=['POST'])
+@app.route('/deleteproduct/<int:id>', methods=['GET','POST'])
+@login_required
 def deleteproduct(id):
     product = Addproduct.query.get_or_404(id)
     if request.method == "POST":
@@ -235,6 +251,6 @@ def deleteproduct(id):
         db.session.delete(product)
         db.session.commit()
         flash(f'Продукт {product.name} был удален из записи', 'success')
-        return redirect(url_for('adim'))
+        return redirect(url_for('admin'))
     flash(f'Невозможно удалить продукт', 'success')
     return redirect(url_for('admin'))

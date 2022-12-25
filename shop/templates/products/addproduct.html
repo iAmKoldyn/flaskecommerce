@@ -44,6 +44,8 @@
                 <form method="post" enctype="multipart/form-data">
                 <div>
                     {{ render_field(form.name, class="form-control") }}
+                    {{ render_field(form.gender, class="form-control") }}
+                    {{ render_field(form.size, class="form-control") }}
                     {{ render_field(form.price, class="form-control") }}
                     {{ render_field(form.discount, class="form-control") }}
                     {{ render_field(form.stock, class="form-control") }}
