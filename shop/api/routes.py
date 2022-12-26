@@ -25,17 +25,17 @@ def get():
         response[int(product.id)] = {"name": str(product.name),
                                      "stock": int(product.stock),
                                      "desc": str(product.desc),
-                                     #  "image_1": get_image(str(product.image_1)),
-                                     #  "image_2": get_image(str(product.image_2)),
-                                     #  "image_3": get_image(str(product.image_3)),
+                                     "image_1": get_image(str(product.image_1)),
                                      "brand": str(product.brand.name),
                                      "brand_id": int(product.brand_id),
                                      "category": str(product.category.name),
                                      "category_id": int(product.category_id),
                                      "colors": str(product.colors),
                                      "discount": int(product.discount),
-                                     "price": float(product.price)
-                                     #  "pub_date": str(product.pub_date.now())
+                                     "price": float(product.price),
+                                     "gender": str(product.gender),
+                                     "size": int(product.size),
+                                     "stock": int(product.stock)
                                      }
     return json.dumps({"response": response}), 200
 
