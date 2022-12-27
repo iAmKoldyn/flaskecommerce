@@ -158,14 +158,14 @@ img {
     margin-right: 70px;
     width: 38px;
     height: 38px;
-    background-image: url('../images/prev.svg');
+    background-image: url('../../templates/frontend/images/prev.svg');
 }
 
 .next {
     margin-left: 70px;
     width: 38px;
     height: 38px;
-    background-image: url('../images/next.svg');
+    background-image: url('../../templates/frontend/images/next.svg');
 }
 
 .item-active {

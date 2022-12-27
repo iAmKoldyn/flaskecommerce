@@ -5,8 +5,11 @@ from flask_login import login_required
 from shop import app, db, photos, search
 from .models import Category, Brand, Addproduct
 from .forms import Addproducts
+from ..customers.forms import CustomerLoginFrom, CustomerRegisterForm
 import secrets
 import os
+
+from ..admin.forms import LoginForm
 
 
 def brands():
@@ -18,13 +21,14 @@ def categories():
     categories = Category.query.join(Addproduct, (Category.id == Addproduct.category_id)).all()
     return categories
 
-
 @app.route('/')
 def home():
+    loginform = CustomerLoginFrom()
+    registerform = CustomerRegisterForm()
     page = request.args.get('page', 1, type=int)
     products = Addproduct.query.filter(Addproduct.stock > 0).order_by(Addproduct.id.desc()).paginate(page=page,
                                                                                                      per_page=8)
-    return render_template('products/index.html', products=products, brands=brands(), categories=categories())
+    return render_template('index.html', products=products, brands=brands(), categories=categories(), loginform=loginform, registerform=registerform)
 
 
 @app.route('/result')
@@ -63,6 +67,14 @@ def get_category(id):
     get_cat_prod = Addproduct.query.filter_by(category=get_cat).paginate(page=page, per_page=8)
     return render_template('products/index.html', get_cat_prod=get_cat_prod, brands=brands(), categories=categories(),
                            get_cat=get_cat)
+
+
+@app.route('/gender/<string:gender>')
+def get_gender(gender):
+    page = request.args.get('page', 1, type=int)
+    products = Addproduct.query.filter_by(gender=gender).paginate(page=page, per_page=8)
+    return render_template('products/index.html', get_gen_prod=products, get_gen=gender, brands=brands(), categories=categories())
+
 
 
 @app.route('/addbrand', methods=['GET', 'POST'])
@@ -237,7 +249,7 @@ def updateproduct(id):
                            brands=brands, categories=categories)
 
 
-@app.route('/deleteproduct/<int:id>', methods=['GET','POST'])
+@app.route('/deleteproduct/<int:id>', methods=['GET', 'POST'])
 @login_required
 def deleteproduct(id):
     product = Addproduct.query.get_or_404(id)

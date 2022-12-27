@@ -39,4 +39,5 @@ def login():
         else:
             flash(f'Неверный email или пароль', 'success')
             return redirect(url_for('login'))
-    return render_template('admin/login.html', title='Вход', form=form)
+    print(form.validate_on_submit())
+    return render_template('admin/login/index.html', title='Вход', form=form)

@@ -51,8 +51,7 @@ def customer_register():
         db.session.add(register)
         flash(f'Здравствуйте! {form.email.data} Спасибо вам за прохождение регистрации', 'success')
         db.session.commit()
-        return redirect(url_for('login'))
-    return render_template('customer/register.html', form=form)
+    return redirect(url_for('home'))
 
 
 @app.route('/customer/login', methods=['GET', 'POST'])
@@ -66,9 +65,8 @@ def customerLogin():
             next = request.args.get('next')
             return redirect(next or url_for('home'))
         flash('Неверный логин или пароль', 'danger')
-        return redirect(url_for('customerLogin'))
 
-    return render_template('customer/login.html', form=form)
+    return redirect(url_for('home'))
 
 
 @app.route('/customer/logout')

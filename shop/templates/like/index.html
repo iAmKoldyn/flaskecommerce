@@ -5,41 +5,12 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Store</title>
+  <title>Like</title>
   <link rel="icon" href="../images/image%201.png">
-  <link rel="stylesheet" href="../css/recovery_styles.css">
-  <link rel="stylesheet" href="../css/store.css">
-  <link rel="stylesheet" href="../font/stylesheet.css">
-  <link rel="stylesheet" href="../css/popup.css">
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-  <link rel="stylesheet" href="../css/boot.css">
-  <!--  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">-->
-  <!--  <link rel="stylesheet" href="/resources/demos/style.css">-->
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-  <script>
-    $( function() {
-      $( "#slider-range" ).slider({
-        range: true,
-        min: 0,
-        max: 500,
-        values: [ 75, 300 ],
-        slide: function( event, ui ) {
-          $( "#amount" ).val( "От " + ui.values[ 0 ] + "₽ до " + ui.values[ 1 ] + "₽");
-        }
-      });
-      $( "#amount" ).val( "От " + $( "#slider-range" ).slider( "values", 0 ) +
-              "₽ до " + $( "#slider-range" ).slider( "values", 1 ) + "₽");
-    } );
-  </script>
-  <!-- Latest compiled and minified CSS -->
-  <!--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">-->
-
-  <!-- Latest compiled and minified JavaScript -->
-  <!--  <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>-->
-
-  <!-- (Optional) Latest compiled and minified JavaScript translation files -->
-  <!--  <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>-->
+  <link rel="stylesheet" href="../../../static/css/recovery_styles.css">
+  <link rel="stylesheet" href="../../../static/css/like.css">
+  <link rel="stylesheet" href="../../../static/font/stylesheet.css">
+  <link rel="stylesheet" href="../../../static/css/popup.css">
 </head>
 <body>
 <header class="header">
@@ -47,7 +18,7 @@
     <div class="left">
       <div class="logo">
         <p class="logo_text">
-          <a href="../">Cotton</a>
+          <a href="..">Cotton</a>
         </p>
       </div>
       <li class="menu_child">
@@ -306,7 +277,7 @@
     <div class="right">
       <div class="icons">
         <div class="icons_btn1">
-          <a href="../like">
+          <a href="">
             <img src="../images/fi-rs-heart.svg" alt="">
           </a>
         </div>
@@ -332,7 +303,7 @@
     <div class="popup_img">
       <img src="../images/close.svg" class="login_popup_img" alt="">
     </div>
-    <form action="./" method="POST" class="login_popup_form">
+    <form action="" method="POST" class="login_popup_form">
       <div class="form_text">
         <h1>Войти</h1>
         <h1> / </h1>
@@ -353,8 +324,7 @@
     <div class="popup_img">
       <img src="../images/close.svg" class="sign_up_popup_img" alt="">
     </div>
-    <form action="./" method="POST" class="sign_up_popup_form">
-      <!--      https://developer.mozilla.org/ru/docs/Web/API/Event/preventDefault использовать!-->
+    <form action="" method="POST" class="sign_up_popup_form">
       <div class="form_text">
         <h1 class="login_text">Войти</h1>
         <h1> / </h1>
@@ -376,69 +346,10 @@
     </form>
   </div>
 </div>
-<section class="sort_menu">
-  <div class="sort_menu_text">
-    <p><a href="../">Главная</a> / Мужская одежда и обувь</p>
-  </div>
-  <div class="select_block">
-    <div class="select_1">
-      <select name="size" class="size">
-        <option value="1">Показывать: 10</option>
-        <option value="2">Показывать: 20</option>
-        <option value="3">Показывать: 30</option>
-        <option value="4">Показывать: 40</option>
-        <option value="5">Показывать: 50</option>
-        <option value="6">Показывать: 60</option>
-      </select>
-    </div>
-    <div class="select_2">
-      <select name="sort_way" class="sort_way">
-        <option value="1">По умолчанию</option>
-        <option value="2">Новые</option>
-        <option value="3">Популярные</option>
-        <option value="4">По цене (возрастание)</option>
-        <option value="5">По цене (убывание)</option>
-      </select>
-    </div>
-  </div>
-</section>
 <section class="block3">
-  <form class="filter" action="./" method="GET">
-    <h1 class="filter_title">Фильтр</h1>
-    <div class="filter_price">
-      <!--      <p class="filter_price__text filter_subtitle">Цена</p>-->
-      <!--      <input type="range" class="filter_range">-->
-      <div>
-        <label for="amount">Цена</label>
-        <input type="text" id="amount" name="price" readonly class="filter_price_editor">
-      </div>
-
-      <div id="slider-range"></div>
-    </div>
-    <div class="filter_sex">
-      <p class="filter_subtitle">Пол</p>
-      <div class="filter_sex_list">
-        <label for="f">
-          <p><input type="checkbox" id="f" name="sex" value="f">Женский</p>
-        </label>
-        <label for="m">
-          <p><input type="checkbox" id="m" name="sex" value="m">Мужской</p>
-        </label>
-        <label for="u">
-          <p><input type="checkbox" id="u" name="sex" value="u">Унисекс</p>
-        </label>
-      </div>
-    </div>
-    <div class="filter_category">
-      <div class="filter_search">
-        <button type="submit">
-          <img src="../images/fi-rs-search.svg" alt="">Поиск
-        </button>
-      </div>
-    </div>
-  </form>
+  <h3 class="liked_title">Избранное</h3>
   <div class="block3_items">
-    <div class="swiper-wrapper active">
+    <div class="swiper-wrapper">
       <div class="swiper-slide">
         <div class="swiper-wrapper-heart">
           <button>
@@ -452,7 +363,7 @@
           <div class="product_title">
             <h4>Saucony</h4>
             <p>Кроссовки</p>
-            <p class="price">$300</p>
+            <p class="price">6 885 ₽</p>
           </div>
         </a>
       </div>
@@ -469,7 +380,7 @@
           <div class="product_title">
             <h4>Saucony</h4>
             <p>Кроссовки</p>
-            <p class="price">$300</p>
+            <p class="price">6 885 ₽</p>
           </div>
         </a>
       </div>
@@ -486,7 +397,24 @@
           <div class="product_title">
             <h4>Saucony</h4>
             <p>Кроссовки</p>
-            <p class="price">$300</p>
+            <p class="price">6 885 ₽</p>
+          </div>
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <div class="swiper-wrapper-heart">
+          <button>
+            <img src="../images/fi-rs-heart.svg" alt="">
+          </button>
+        </div>
+        <a href="#">
+          <div class="product_img">
+            <img src="../images/4.png" alt="">
+          </div>
+          <div class="product_title">
+            <h4>Saucony</h4>
+            <p>Кроссовки</p>
+            <p class="price">6 885 ₽</p>
           </div>
         </a>
       </div>
@@ -505,7 +433,7 @@
           <div class="product_title">
             <h4>Saucony</h4>
             <p>Кроссовки</p>
-            <p class="price">$300</p>
+            <p class="price">6 885 ₽</p>
           </div>
         </a>
       </div>
@@ -522,7 +450,7 @@
           <div class="product_title">
             <h4>Saucony</h4>
             <p>Кроссовки</p>
-            <p class="price">$300</p>
+            <p class="price">6 885 ₽</p>
           </div>
         </a>
       </div>
@@ -539,7 +467,24 @@
           <div class="product_title">
             <h4>Saucony</h4>
             <p>Кроссовки</p>
-            <p class="price">$300</p>
+            <p class="price">6 885 ₽</p>
+          </div>
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <div class="swiper-wrapper-heart">
+          <button>
+            <img src="../images/fi-rs-heart.svg" alt="">
+          </button>
+        </div>
+        <a href="#">
+          <div class="product_img">
+            <img src="../images/2.png" alt="">
+          </div>
+          <div class="product_title">
+            <h4>Saucony</h4>
+            <p>Кроссовки</p>
+            <p class="price">6 885 ₽</p>
           </div>
         </a>
       </div>
@@ -558,7 +503,7 @@
           <div class="product_title">
             <h4>Saucony</h4>
             <p>Кроссовки</p>
-            <p class="price">$300</p>
+            <p class="price">6 885 ₽</p>
           </div>
         </a>
       </div>
@@ -575,7 +520,7 @@
           <div class="product_title">
             <h4>Saucony</h4>
             <p>Кроссовки</p>
-            <p class="price">$300</p>
+            <p class="price">6 885 ₽</p>
           </div>
         </a>
       </div>
@@ -592,7 +537,94 @@
           <div class="product_title">
             <h4>Saucony</h4>
             <p>Кроссовки</p>
-            <p class="price">$300</p>
+            <p class="price">6 885 ₽</p>
+          </div>
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <div class="swiper-wrapper-heart">
+          <button>
+            <img src="../images/fi-rs-heart.svg" alt="">
+          </button>
+        </div>
+        <a href="#">
+          <div class="product_img">
+            <img src="../images/4.png" alt="">
+          </div>
+          <div class="product_title">
+            <h4>Saucony</h4>
+            <p>Кроссовки</p>
+            <p class="price">6 885 ₽</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="swiper-wrapper-heart">
+          <button>
+            <img src="../images/fi-rs-heart.svg" alt="">
+          </button>
+        </div>
+        <a href="#">
+          <div class="product_img">
+            <img src="../images/4.png" alt="">
+          </div>
+          <div class="product_title">
+            <h4>Saucony</h4>
+            <p>Кроссовки</p>
+            <p class="price">6 885 ₽</p>
+          </div>
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <div class="swiper-wrapper-heart">
+          <button>
+            <img src="../images/fi-rs-heart.svg" alt="">
+          </button>
+        </div>
+        <a href="#">
+          <div class="product_img">
+            <img src="../images/4.png" alt="">
+          </div>
+          <div class="product_title">
+            <h4>Saucony</h4>
+            <p>Кроссовки</p>
+            <p class="price">6 885 ₽</p>
+          </div>
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <div class="swiper-wrapper-heart">
+          <button>
+            <img src="../images/fi-rs-heart.svg" alt="">
+          </button>
+        </div>
+        <a href="#">
+          <div class="product_img">
+            <img src="../images/4.png" alt="">
+          </div>
+          <div class="product_title">
+            <h4>Saucony</h4>
+            <p>Кроссовки</p>
+            <p class="price">6 885 ₽</p>
+          </div>
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <div class="swiper-wrapper-heart">
+          <button>
+            <img src="../images/fi-rs-heart.svg" alt="">
+          </button>
+        </div>
+        <a href="#">
+          <div class="product_img">
+            <img src="../images/4.png" alt="">
+          </div>
+          <div class="product_title">
+            <h4>Saucony</h4>
+            <p>Кроссовки</p>
+            <p class="price">6 885 ₽</p>
           </div>
         </a>
       </div>
@@ -642,8 +674,8 @@
     </button>
   </div>
 </footer>
-<script type="text/javascript" src="../js/scroll.js"></script>
-<script type="text/javascript" src="../js/popup.js"></script>
-<script type="text/javascript" src="../js/script.js"></script>
+<script type="text/javascript" src="../../../static/js/scroll.js"></script>
+<script type="text/javascript" src="../../../static/js/popup.js"></script>
+<script type="text/javascript" src="../../../static/js/script.js"></script>
 </body>
 </html>

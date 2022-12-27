@@ -16,7 +16,7 @@ class Register(db.Model, UserMixin):
     date_created = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
     def __repr__(self):
-        return '<Register %r>' % self.name
+        return '<Register %r>' % self.email
 
 
 class JsonEcodedDict(db.TypeDecorator):

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="../../../static/css/admin_login.css">
+    <link rel="stylesheet" href="../../../static/font/stylesheet.css">
+    <link rel="stylesheet" href="../../../static/css/recovery_styles.css">
+</head>
+{% from "_formhelpers.html" import render_field %}
+<body>
+    <form method=post class="login">
+        {% with messages = get_flashed_messages() %}
+           {% if messages %}
+              {% for message in messages %}
+                 {{ message }}
+              {% endfor %}
+           {% endif %}
+        {% endwith %}
+        {{form.csrf_token}}
+        {{ render_field(form.email) }}
+        {{ render_field(form.password) }}
+      <button type="submit">Войти</button>
+    </form>
+</body>
+</html>
