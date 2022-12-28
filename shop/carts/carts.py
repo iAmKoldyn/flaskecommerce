@@ -3,6 +3,7 @@ from shop import db , app
 from shop.products.models import Addproduct
 from shop.products.routes import brands, categories
 import json
+from flask_babel import _ 
 
 
 def MagerDicts(dict1,dict2):

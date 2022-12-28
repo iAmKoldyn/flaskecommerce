@@ -9,20 +9,20 @@
             <img src="{{url_for('static',filename='images/' + product.image_1)}}" alt="{{product.name}}" width="400" height="400">
         </div>
         <div class="col-md-6">
-            <h4>Product name: {{product.name}} </h4>
+            <h4>{{_("Название продукта")}}: {{product.name}} </h4>
             <hr>
-            <p>Product price: ${{product.price}}</p>
+            <p>{{_("Цена продукта")}}: ${{product.price}}</p>
             <hr>
             {% if product.discount > 0 %}
-            <p>Discount: {{product.discount}} % </p>
+            <p>{{_("Скидка")}}: {{product.discount}} % </p>
             {% endif %}
             <hr>
-            <b>Product discription</b>
+            <b>{{_("Описание продукта")}}</b>
             <p>{{product.desc}}</p>
             <form action="{{url_for('AddCart')}}" method="post">
                 <input type="hidden" name="product_id" value="{{product.id}}">
-                <button type="submit" class="btn btn-sm btn-warning">Add to Cart</button>
-                <label for="quantity">Quantity: </label>
+                <button type="submit" class="btn btn-sm btn-warning">{{_("Добавить в корзину")}}</button>
+                <label for="quantity">{{_("Количество")}}: </label>
                 <input type="number" name="quantity" value="1" min="1" max="{{product.stock}}">
                 {% set colors = product.colors.split(',') %}
                 <label for="colors">Colors: </label>

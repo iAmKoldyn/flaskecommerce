@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="en" xmlns="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cotton_web_frontend</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/image1.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/recovery_styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="../static/font/stylesheet.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/popup.css') }}">
+</head>
+{% from "_formhelpers.html" import render_field %}
+<body>
+<header class="header">
+    <ul class="menu">
+        <div class="left">
+            <div class="logo">
+                <p class="logo_text">
+                    <a href="#">Cotton</a>
+                </p>
+            </div>
+            <li class="menu_child">
+                <div class="menu_text_div">
+                    <p class="menu_text">
+                        <a href="">{{ _('Главная') }}</a>
+                    </p>
+                </div>
+                <div class="wrap">
+                    <div class="wrap_left">
+                        <div class="item_text_block">
+                            <h3 class="wrap_text_title">{{ _('ВСЕ БРЕНДЫ') }}</h3>
+                            <ul class="wrap_list">
+                                {% for brand in brands %}
+                                    <li><a href="/brand/{{ brand.id }}">{{ brand.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="item_text_block">
+                            <h3 class="wrap_text_title">{{ _('ВСЕ КАТЕГОРИИ') }}</h3>
+                            <ul class="wrap_list">
+                                {% for category in categories %}
+                                    <li><a href="/categories/{{ category.id }}">{{ category.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="wrap_right">
+                        <div class="clothes">
+                            <div class="item_block">
+                                <a href="#">
+                                    <img src="{{ url_for('static', filename='images/image5.png') }}" alt="n"
+                                         class="item_block_image">
+                                    <h3 class="item_block_title">{{ _('ОДЕЖДА') }}</h3>
+                                </a>
+                            </div>
+                            <div class="item_block">
+                                <a href="#">
+                                    <img src="{{ url_for('static', filename='images/image6.png') }}" alt=""
+                                         class="item_block_image">
+                                    <h3 class="item_block_title">{{ _('ОБУВЬ') }}</h3>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="menu_child">
+                <div class="menu_text_div">
+                    <p class="menu_text">
+                        <a href="/gender/male">{{ _('МУЖСКОЕ') }}</a>
+                    </p>
+                </div>
+                <div class="wrap">
+                    <div class="wrap_left">
+                        <div class="item_text_block">
+                            <h3 class="wrap_text_title">{{ _('ВСЕ БРЕНДЫ') }}</h3>
+                            <ul class="wrap_list">
+                                {% for brand in brands %}
+                                    <li><a href="/brand/{{ brand.id }}">{{ brand.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="item_text_block">
+                            <h3 class="wrap_text_title">{{ _('ВСЕ КАТЕГОРИИ') }}</h3>
+                            <ul class="wrap_list">
+                                {% for category in categories %}
+                                    <li><a href="/categories/{{ category.id }}">{{ category.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="wrap_right">
+                        <div class="clothes">
+                            <div class="item_block">
+                                <a href="#">
+                                    <img src="{{ url_for('static', filename='images/image5.png') }}" alt=""
+                                         class="item_block_image">
+                                    <h3 class="item_block_title">{{_("ОДЕЖДА")}}</h3>
+                                </a>
+                            </div>
+                            <div class="item_block">
+                                <a href="#">
+                                    <img src="{{ url_for('static', filename='images/image6.png') }}" alt=""
+                                         class="item_block_image">
+                                    <h3 class="item_block_title">{{_("ОБУВЬ")}}</h3>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="menu_child">
+                <div class="menu_text_div">
+                    <p class="menu_text">
+                        <a href="/gender/female">{{ _('Женское') }}</a>
+                    </p>
+                </div>
+                <div class="wrap">
+                    <div class="wrap_left">
+                        <div class="item_text_block">
+                            <h3 class="wrap_text_title">В{{_("ВСЕ БРЕНДЫ")}}</h3>
+                            <ul class="wrap_list">
+                                {% for brand in brands %}
+                                    <li><a href="/brand/{{ brand.id }}">{{ brand.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="item_text_block">
+                            <h3 class="wrap_text_title">{{_("ВСЕ КАТЕГОРИИ")}}</h3>
+                            <ul class="wrap_list">
+                                {% for category in categories %}
+                                    <li><a href="/categories/{{ category.id }}">{{ category.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="wrap_right">
+                        <div class="clothes">
+                            <div class="item_block">
+                                <a href="#">
+                                    <img src="{{ url_for('static', filename='images/image5.png') }}" alt=""
+                                         class="item_block_image">
+                                    <h3 class="item_block_title">{{_("ОДЕЖДА")}}</h3>
+                                </a>
+                            </div>
+                            <div class="item_block">
+                                <a href="#">
+                                    <img src="{{ url_for('static', filename='images/image6.png') }}" alt=""
+                                         class="item_block_image">
+                                    <h3 class="item_block_title">{{_("ОБУВЬ")}}</h3>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="menu_child">
+                <div class="menu_text_div">
+                    <p class="menu_text">
+                        <a href="#">{{ _('Скидки') }}</a>
+                    </p>
+                </div>
+                <div class="wrap">
+                    <div class="wrap_left">
+                        <div class="item_text_block">
+                            <h3 class="wrap_text_title">{{_("ВСЕ БРЕНДЫ")}}</h3>
+                            <ul class="wrap_list">
+                                {% for brand in brands %}
+                                    <li><a href="/brand/{{ brand.id }}">{{ brand.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="item_text_block">
+                            <h3 class="wrap_text_title">{{_("ВСЕ КАТЕГОРИИ")}}</h3>
+                            <ul class="wrap_list">
+                                {% for category in categories %}
+                                    <li><a href="/categories/{{ category.id }}">{{ category.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="wrap_right">
+                        <div class="clothes">
+                            <div class="item_block">
+                                <a href="#">
+                                    <img src="{{ url_for('static', filename='images/image5.png') }}" alt=""
+                                         class="item_block_image">
+                                    <h3 class="item_block_title">{{_("ОДЕЖДА")}}</h3>
+                                </a>
+                            </div>
+                            <div class="item_block">
+                                <a href="#">
+                                    <img src="{{ url_for('static', filename='images/image6.png') }}" alt=""
+                                         class="item_block_image">
+                                    <h3 class="item_block_title">{{_("ОБУВЬ")}}</h3>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </div>
+        <div class="right">
+            <div class="icons">
+                <div class="icons_btn1">
+                    <a href="like">
+                        <img src="{{ url_for('static', filename='images/fi-rs-heart.svg') }}" alt="kkk">
+                    </a>
+                </div>
+                <div class="icons_btn2">
+                    <a href="#">
+                        <img src="{{ url_for('static', filename='images/fi-rs-search.svg') }}" alt="">
+                    </a>
+                    <form action="/result">
+                        <input type="search" placeholder="Search" name="q" style="width: 100px">
+                        <input type="submit">
+                    </form>
+                </div>
+                <div class="icons_btn3">
+                    <a href="/cart">
+                        <img src="{{ url_for('static', filename='images/fi-rs-shopping-bag.svg') }}" alt="">
+                    </a>
+                </div>
+                <div class="icons_btn4">
+                    <img src="{{ url_for('static', filename='images/fi-rs-user.svg') }}" alt="">
+                </div>
+            </div>
+        </div>
+    </ul>
+</header>
+<div class="popup_all">
+    <div class="login_popup">
+        <div class="popup_img">
+            <img src="{{ url_for('static', filename='images/close.svg') }}" class="login_popup_img" alt="">
+        </div>
+        <form action="/customer/login" method="POST" class="login_popup_form">
+            <div class="form_text">
+                <h1>{{_("Войти")}}</h1>
+                <h1> / </h1>
+                <h1 class="sign_up_text">{{_("Регистрация")}}</h1>
+            </div>
+            {{ loginform.csrf_token }}
+            {{ render_field(loginform.email) }}
+            {{ render_field(loginform.password) }}
+            <button type="submit">{{_("Войти")}}</button>
+        </form>
+    </div>
+    <div class="sign_up_popup">
+        <div class="popup_img">
+            <img src="{{ url_for('static', filename='images/close.svg') }}" class="sign_up_popup_img" alt="">
+
+        </div>
+        <form action="/customer/register" method="POST" class="sign_up_popup_form">
+            {{ registerform.csrf_token }}
+            {{ render_field(registerform.email) }}
+            {{ render_field(registerform.password) }}
+            {{ render_field(registerform.confirm) }}
+            <button type="submit">{{_("Регистрация")}}</button>
+        </form>
+    </div>
+</div>
+<section class="main">
+    <a href="/gender/male" class="main_left">
+        <img src="{{ url_for('static', filename='images/image1.png') }}" alt="" class="main_image">
+        <div class="main_category">
+            <p class="main_category_text1">{{_("Мужское")}}</p>
+            <p class="main_category_text2">{{_("СМОТРЕТЬ")}}</p>
+        </div>
+    </a>
+    <a href="/gender/female" class="main_right">
+        <img src="{{ url_for('static', filename='images/image2.png') }}" alt="" class="main_image">
+        <div class="main_category">
+            <p class="main_category_text1">{{_("Женское")}}</p>
+            <p class="main_category_text2">{{_("СМОТРЕТЬ")}}</p>
+        </div>
+    </a>
+</section>
+<section class="block2">
+    <img src="{{ url_for('static', filename='images/block2.png') }}" alt="">
+</section>
+<section class="block3">
+    <h3 class="popular">{{_("Недавние товары")}}</h3>
+    <div class="block3_items">
+        <div class="swiper-wrapper active">
+            <div class="swiper-slide">
+                <div class="swiper-wrapper-heart">
+                    <button>
+                        <img src="{{ url_for('static', filename='images/fi-rs-heart.svg') }}" alt="">
+                    </button>
+                </div>
+                <a href="#">
+                    <div class="product_img">
+                        <img src="{{ url_for('static', filename='images/2.png') }}" alt="">
+                    </div>
+                    <div class="product_title">
+                        <h4>Saucony</h4>
+                        <p>{{_("Кроссовки")}}</p>
+                        <p class="price">$300</p>
+                    </div>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-wrapper-heart">
+                    <button>
+                        <img src="{{ url_for('static', filename='images/fi-rs-heart.svg') }}" alt="">
+                    </button>
+                </div>
+                <a href="#">
+                    <div class="product_img">
+                        <img src="{{ url_for('static', filename='images/4.png') }}" alt="">
+                    </div>
+                    <div class="product_title">
+                        <h4>Saucony</h4>
+                        <p>{{_("Кроссовки")}}</p>
+                        <p class="price">$300</p>
+                    </div>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-wrapper-heart">
+                    <button>
+                        <img src="{{ url_for('static', filename='images/fi-rs-heart.svg') }}" alt="">
+                    </button>
+                </div>
+                <a href="#">
+                    <div class="product_img">
+                        <img src="{{ url_for('static', filename='images/2.png') }}" alt="">
+                    </div>
+                    <div class="product_title">
+                        <h4>Saucony</h4>
+                        <p>{{_("Кроссовки")}}</p>
+                        <p class="price">$300</p>
+                    </div>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-wrapper-heart">
+                    <button>
+                        <img src="{{ url_for('static', filename='images/fi-rs-heart.svg') }}" alt="">
+                    </button>
+                </div>
+                <a href="#">
+                    <div class="product_img">
+                        <img src="{{ url_for('static', filename='images/4.png') }}" alt="">
+                    </div>
+                    <div class="product_title">
+                        <h4>Saucony</h4>
+                        <p>{{_("Кроссовки")}}</p>
+                        <p class="price">$300</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="swiper-wrapper-heart">
+                    <button>
+                        <img src="{{ url_for('static', filename='images/fi-rs-heart.svg') }}" alt="">
+                    </button>
+                </div>
+                <a href="#">
+                    <div class="product_img">
+                        <img src="{{ url_for('static', filename='images/4.png') }}" alt="">
+                    </div>
+                    <div class="product_title">
+                        <h4>Saucony</h4>
+                        <p>{{_("Кроссовки")}}</p>
+                        <p class="price">$300</p>
+                    </div>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-wrapper-heart">
+                    <button>
+                        <img src="{{ url_for('static', filename='images/fi-rs-heart.svg') }}" alt="">
+                    </button>
+                </div>
+                <a href="#">
+                    <div class="product_img">
+                        <img src="{{ url_for('static', filename='images/2.png') }}" alt="">
+                    </div>
+                    <div class="product_title">
+                        <h4>Saucony</h4>
+                        <p>{{_("Кроссовки")}}</p>
+                        <p class="price">$300</p>
+                    </div>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-wrapper-heart">
+                    <button>
+                        <img src="{{ url_for('static', filename='images/fi-rs-heart.svg') }}" alt="">
+                    </button>
+                </div>
+                <a href="#">
+                    <div class="product_img">
+                        <img src="{{ url_for('static', filename='images/4.png') }}" alt="">
+                    </div>
+                    <div class="product_title">
+                        <h4>Saucony</h4>
+                        <p>{{_("Кроссовки")}}</p>
+                        <p class="price">$300</p>
+                    </div>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-wrapper-heart">
+                    <button>
+                        <img src="{{ url_for('static', filename='images/fi-rs-heart.svg') }}" alt="">
+                    </button>
+                </div>
+                <a href="#">
+                    <div class="product_img">
+                        <img src="{{ url_for('static', filename='images/5.png') }}" alt="">
+                    </div>
+                    <div class="product_title">
+                        <h4>Saucony</h4>
+                        <p>{{_("Кроссовки")}}</p>
+                        <p class="price">$300</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="swiper-wrapper-heart">
+                    <button>
+                        <img src="{{ url_for('static', filename='images/fi-rs-heart.svg') }}" alt="">
+                    </button>
+                </div>
+                <a href="#">
+                    <div class="product_img">
+                        <img src="{{ url_for('static', filename='images/4.png') }}" alt="">
+                    </div>
+                    <div class="product_title">
+                        <h4>Saucony</h4>
+                        <p>Кроссовки</p>
+                        <p class="price">$300</p>
+                    </div>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-wrapper-heart">
+                    <button>
+                        <img src="{{ url_for('static', filename='images/fi-rs-heart.svg') }}" alt="">
+                    </button>
+                </div>
+                <a href="#">
+                    <div class="product_img">
+                        <img src="{{ url_for('static', filename='images/5.png') }}" alt="">
+                    </div>
+                    <div class="product_title">
+                        <h4>Saucony</h4>
+                        <p>{{_("Кроссовки")}}</p>
+                        <p class="price">$300</p>
+                    </div>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-wrapper-heart">
+                    <button>
+                        <img src="{{ url_for('static', filename='images/fi-rs-heart.svg') }}" alt="">
+                    </button>
+                </div>
+                <a href="#">
+                    <div class="product_img">
+                        <img src="{{ url_for('static', filename='images/4.png') }}" alt="">
+                    </div>
+                    <div class="product_title">
+                        <h4>Saucony</h4>
+                        <p>{{_("Кроссовки")}}</p>
+                        <p class="price">$300</p>
+                    </div>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-wrapper-heart">
+                    <button>
+                        <img src="{{ url_for('static', filename='images/fi-rs-heart.svg') }}" alt="">
+                    </button>
+                </div>
+                <a href="#">
+                    <div class="product_img">
+                        <img src="{{ url_for('static', filename='images/4.png') }}" alt="">
+                    </div>
+                    <div class="product_title">
+                        <h4>Saucony</h4>
+                        <p>{{_("Кроссовки")}}</p>
+                        <p class="price">$300</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="swiper-wrapper-heart">
+                    <button>
+                        <img src="{{ url_for('static', filename='images/fi-rs-heart.svg') }}" alt="">
+                    </button>
+                </div>
+                <a href="#">
+                    <div class="product_img">
+                        <img src="{{ url_for('static', filename='images/4.png') }}" alt="ввв">
+                    </div>
+                    <div class="product_title">
+                        <h4>Saucony</h4>
+                        <p>{{_("Кроссовки")}}</p>
+                        <p class="price">$300</p>
+                    </div>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-wrapper-heart">
+                    <button>
+                        <img src="{{ url_for('static', filename='images/fi-rs-heart.svg') }}" alt="">
+                    </button>
+                </div>
+                <a href="#">
+                    <div class="product_img">
+                        <img src="{{ url_for('static', filename='images/4.png') }}" alt="">
+                    </div>
+                    <div class="product_title">
+                        <h4>Saucony</h4>
+                        <p>{{_("Кроссовки")}}</p>
+                        <p class="price">$300</p>
+                    </div>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-wrapper-heart">
+                    <button>
+                        <img src="{{ url_for('static', filename='images/fi-rs-heart.svg') }}" alt="">
+                    </button>
+                </div>
+                <a href="#">
+                    <div class="product_img">
+                        <img src="{{ url_for('static', filename='images/4.png') }}" alt="">
+                    </div>
+                    <div class="product_title">
+                        <h4>Saucony</h4>
+                        <p>{{_("Кроссовки")}}</p>
+                        <p class="price">$300</p>
+                    </div>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-wrapper-heart">
+                    <button>
+                        <img src="{{ url_for('static', filename='images/fi-rs-heart.svg') }}" alt="">
+                    </button>
+                </div>
+                <a href="#">
+                    <div class="product_img">
+                        <img src="{{ url_for('static', filename='images/4.png') }}" alt="">
+                    </div>
+                    <div class="product_title">
+                        <h4>Saucony</h4>
+                        <p>{{_("Кроссовки")}}</p>
+                        <p class="price">$300</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="switch_items">
+        <button class="prev" onclick="prev()"><</button>
+        <ul class="list-inline">
+            <li class="list-inline-item item-active"></li>
+            <li class="list-inline-item"></li>
+            <li class="list-inline-item"></li>
+            <li class="list-inline-item"></li>
+        </ul>
+        <button class="next" onclick="next()">></button>
+    </div>
+</section>
+<footer>
+    <hr>
+    <div class="panel">
+        <div class="panel_left">
+            <div class="contact">
+                <h3>{{_("Контакты")}}</h3>
+                <p><a href="#">+7 (999) 666-55-44</a></p>
+                <p><a href="#">Cotton@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="panel_right">
+            <div class="support">
+                <h3>{{_("Поддержка")}}</h3>
+                <p><a href="#">{{_("Помощь покупателю")}}</a></p>
+                <p><a href="#">{{_("Доставка и оплата")}}</a></p>
+                <p><a href="#">{{_("Возврат")}}</a></p>
+                <p><a href="#">{{_("Программа лояльности")}}</a></p>
+                <p><a href="#">{{_("Партнеры")}}</a></p>
+            </div>
+            <div class="info">
+                <h3>{{_("Информация")}}</h3>
+                <p><a href="#">{{_("Контакты")}}</a></p>
+                <p><a href="#">{{_("Магазины")}}</a></p>
+                <p><a href="#">{{_("Блог")}}</a></p>
+                <p><a href="#">{{_("Вакансии")}}</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="bottom_left">
+            <p><a href="#">© 2022 Coral, Inc.</a></p>
+        </div>
+        <div class="bottom_center">
+            <img src="images/payment.png" alt="">
+        </div>
+        <button onclick="scrollToTop(500);">
+            <div class="bottom_right">
+                <p>{{_("Наверх")}}</p>
+                <img src="images/top.svg" alt="">
+            </div>
+        </button>
+    </div>
+</footer>
+<script type="text/javascript" src="{{ url_for('static', filename='js/scroll.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/popup.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+<script>
+    let close = document.querySelector(".popup_img")
+    close.onclick = ()=> {
+        document.querySelector(".popup_all").style.display = "none";
+        document.querySelector(".login_popup").style.display = "none";
+        document.querySelector(".sign_up_popup").style.display = "none";
+        let divs = document.querySelectorAll('body *');
+        for (let i = 0; i < divs.length; i++) {
+            divs[i].style = undefined;
+        }
+        let popup_items = document.querySelectorAll('.popup_all *');
+        for (let i = 0; i < popup_items.length; i++) {
+            popup_items[i].style.opacity = 0;
+        }
+        document.querySelector('.popup_all').style.opacity = 0;
+    }
+</script>
+</body>
+</html>

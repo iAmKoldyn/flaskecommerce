@@ -1,12 +1,12 @@
-from flask import Flask
+from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class
 import os
-
 from flask_msearch import Search
 from flask_login import LoginManager
 from flask_migrate import Migrate
+from flask_babel import Babel
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 app = Flask(__name__)
@@ -23,6 +23,15 @@ db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 search = Search()
 search.init_app(app)
+
+babel = Babel(app)
+
+@babel.localeselector
+def get_locale():
+    return request.accept_languages.best_match(["ru","en"])
+
+
+
 
 migrate = Migrate(app, db)
 with app.app_context():

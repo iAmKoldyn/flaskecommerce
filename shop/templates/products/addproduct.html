@@ -10,22 +10,22 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="{{url_for('admin')}}">product <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{{url_for('admin')}}">{{_("Продукт")}} <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url_for('brands')}}">brand</a>
+              <a class="nav-link" href="{{url_for('brands')}}">{{_("Бренд")}}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url_for('categories')}}">catgory</a>
+              <a class="nav-link" href="{{url_for('categories')}}">{{_("Категория")}}</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Add products
+                {{_("Добавить Продукты")}}
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="{{url_for('addproduct')}}">Add product</a>
-                <a class="dropdown-item" href="{{url_for('addbrand')}}">add brand</a>
-                <a class="dropdown-item" href="{{url_for('addcat')}}">add category</a>
+                <a class="dropdown-item" href="{{url_for('addproduct')}}">{{_("Добавить Продукт")}}</a>
+                <a class="dropdown-item" href="{{url_for('addbrand')}}">{{_("Добавить Бренд")}}</a>
+                <a class="dropdown-item" href="{{url_for('addcat')}}">{{_("Добавить Категорию")}}</a>
               </div>
             </li>
           </ul>
@@ -39,7 +39,7 @@
     <div class="row">
         <div class="col-md-1"></div>
             <div class="col-md-10">
-                <div class="text-center bg-info p-2 h4">Add a product</div>
+                <div class="text-center bg-info p-2 h4">{{_("Добавить Продукт")}}</div>
                 {% from "_formhelpers.html" import render_field %}
                 <form method="post" enctype="multipart/form-data">
                 <div>

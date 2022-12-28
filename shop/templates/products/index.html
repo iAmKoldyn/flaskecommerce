@@ -5,40 +5,40 @@
     <div class="row">
         {% if brand %}
          {% for b in brand.items %}
-        <div class="col-md-3 mt-4">
-            <div class="card">
-                <img src="{{url_for('static', filename='images/' + b.image_1)}}" class="card-img-top" alt="{{b.name}}" height="200" width="200">
-                <div class="card-body">
-                    {% if b.discount > 0 %}
-                    <h5 style="text-shadow: 1px 2px 2px #000; color: #f00; transform: rotate(-15deg); position: absolute; top: 23%; left: 25%; font-weight: 600;"> Discount {{b.discount}}</h5>
-                    {% endif %}
-                  <h5 class="text-center">{{b.name}}</h5>
-                  <p class="text-center">Price ${{b.price}}</p>
+            <div class="col-md-3 mt-4">
+                <div class="card">
+                    <img src="{{url_for('static', filename='images/' + b.image_1)}}" class="card-img-top" alt="{{b.name}}" height="200" width="200">
+                    <div class="card-body">
+                        {% if b.discount > 0 %}
+                        <h5 style="text-shadow: 1px 2px 2px #000; color: #f00; transform: rotate(-15deg); position: absolute; top: 23%; left: 25%; font-weight: 600;"> {{_("Скидка")}} {{b.discount}}</h5>
+                        {% endif %}
+                      <h5 class="text-center">{{b.name}}</h5>
+                      <p class="text-center">{{_("Цена")}} ${{b.price}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{{url_for('single_page',id=b.id)}}" class="float-left btn btn-sm btn-primary">{{_("Подробно")}}</a>
+                        <form action="{{url_for('AddCart')}}" method="post">
+                          <input type="hidden" name="product_id" value="{{b.id}}">
+                          <button type="submit" class="btn btn-sm btn-warning float-right">{{_("Добавить в корзину")}}</button>
+                          <input type="hidden" name="quantity" value="1" min="1" max="20">
+                          {% set colors = b.colors.split(',') %}
+                          <select name="colors" id="colors" style="visibility: hidden;">
+                              {% for color in colors %}
+                              {% set col = color.split(':') %}
+                              <option value="{{col[0]}}">{{col[0] | capitalize }}</option>
+                              {% endfor %}
+                          </select>
+                      </form>
+                    </div>
                 </div>
-                <div class="card-footer">
-                    <a href="{{url_for('single_page',id=b.id)}}" class="float-left btn btn-sm btn-primary">Details</a>
-                    <form action="{{url_for('AddCart')}}" method="post">
-                      <input type="hidden" name="product_id" value="{{b.id}}">
-                      <button type="submit" class="btn btn-sm btn-warning float-right">Add to Cart</button>
-                      <input type="hidden" name="quantity" value="1" min="1" max="20">
-                      {% set colors = b.colors.split(',') %}
-                      <select name="colors" id="colors" style="visibility: hidden;">
-                          {% for color in colors %}
-                          {% set col = color.split(':') %}
-                          <option value="{{col[0]}}">{{col[0] | capitalize }}</option>
-                          {% endfor %}
-                      </select>
-                  </form>
-                </div>
-            </div>
-          </div>
-        {% endfor %}
+              </div>
+         {% endfor %}
     </div>
     
     <div class="row mt-4">
       <div class="col text-center">
         {% if brand.has_prev %}
-          <a href="{{url_for('get_brand',id=get_brand.id, page=brand.prev_num)}}"class="btn btn-sm btn-outline-info">previus</a>
+          <a href="{{url_for('get_brand',id=get_brand.id, page=brand.prev_num)}}" class="btn btn-sm btn-outline-info">{{_("Предыдущий")}}</a>
         {% endif %}
         {% if brand.total > 8 %}
        {% for page_num in brand.iter_pages(left_edge=1, right_edge=2, left_current=1,right_current=2) %}
@@ -54,7 +54,7 @@
        {% endfor %}
        {% endif %}
        {% if brand.has_next %}
-       <a href="{{url_for('get_brand',id=get_brand.id, page=brand.next_num)}}"class="btn btn-sm btn-outline-info">next</a>
+       <a href="{{url_for('get_brand',id=get_brand.id, page=brand.next_num)}}"class="btn btn-sm btn-outline-info">{{_("следующий")}}</a>
      {% endif %}
       </div>
     </div>
@@ -67,16 +67,16 @@
                 <img src="{{url_for('static', filename='images/' + get_cat.image_1)}}" class="card-img-top" alt="{{get_cat.name}}" height="200" width="200">
                 <div class="card-body">
                     {% if get_cat.discount > 0 %}
-                    <h5 style="text-shadow: 1px 2px 2px #000; color: #f00; transform: rotate(-15deg); position: absolute; top: 23%; left: 25%; font-weight: 600;"> Discount {{get_cat.discount}}</h5>
+                    <h5 style="text-shadow: 1px 2px 2px #000; color: #f00; transform: rotate(-15deg); position: absolute; top: 23%; left: 25%; font-weight: 600;"> {{_("Скидка")}} {{get_cat.discount}}</h5>
                     {% endif %}
                   <h5 class="text-center">{{get_cat.name}}</h5>
                   <p class="text-center">Price ${{get_cat.price}}</p>
                 </div>
                 <div class="card-footer">
-                    <a href="{{url_for('single_page', id=get_cat.id)}}" class="float-left btn btn-sm btn-primary">Details</a>
+                    <a href="{{url_for('single_page', id=get_cat.id)}}" class="float-left btn btn-sm btn-primary">{{_("Подробно")}}</a>
                     <form action="{{url_for('AddCart')}}" method="post">
                       <input type="hidden" name="product_id" value="{{get_cat.id}}">
-                      <button type="submit" class="btn btn-sm btn-warning float-right">Add to Cart</button>
+                      <button type="submit" class="btn btn-sm btn-warning float-right">{{_("Добавить в корзину")}}</button>
                       <input type="hidden" name="quantity" value="1" min="1" max="20">
                       {% set colors = get_cat.colors.split(',') %}
                       <select name="colors" id="colors" style="visibility: hidden;">
@@ -96,7 +96,7 @@
       <div class="row mt-4">
         <div class="col text-center">
           {% if get_cat_prod.has_prev %}
-            <a href="{{url_for('get_category',id=get_cat.id, page=get_cat_prod.prev_num)}}"class="btn btn-sm btn-outline-info">previus</a>
+            <a href="{{url_for('get_category',id=get_cat.id, page=get_cat_prod.prev_num)}}"class="btn btn-sm btn-outline-info">{{_("Предыдущий")}}</a>
           {% endif %}
           {% if get_cat_prod.total > 8 %}
          {% for page_num in get_cat_prod.iter_pages(left_edge=1, right_edge=2, left_current=1,right_current=2) %}
@@ -112,9 +112,41 @@
          {% endfor %}
          {% endif %}
          {% if get_cat_prod.has_next %}
-         <a href="{{url_for('home', page=get_cat_prod.next_num)}}"class="btn btn-sm btn-outline-info">next</a>
+         <a href="{{url_for('home', page=get_cat_prod.next_num)}}" class="btn btn-sm btn-outline-info">{{_("следующий")}}</a>
        {% endif %}
         </div>
+      </div>
+        <div class="row">
+        {% elif get_gen_prod %}
+        {% for get_gen in get_gen_prod.items %}
+        <div class="col-md-3 mt-4">
+            <div class="card">
+                <img src="{{url_for('static', filename='images/' + get_gen.image_1)}}" class="card-img-top" alt="{{get_gen.name}}" height="200" width="200">
+                <div class="card-body">
+                    {% if get_gen.discount > 0 %}
+                    <h5 style="text-shadow: 1px 2px 2px #000; color: #f00; transform: rotate(-15deg); position: absolute; top: 23%; left: 25%; font-weight: 600;"> {{_("Скидка")}} {{get_gen.discount}}</h5>
+                    {% endif %}
+                  <h5 class="text-center">{{get_gen.name}}</h5>
+                  <p class="text-center">Price ${{get_gen.price}}</p>
+                </div>
+                <div class="card-footer">
+                    <a href="{{url_for('single_page', id=get_gen.id)}}" class="float-left btn btn-sm btn-primary">{{_("Подробно")}}</a>
+                    <form action="{{url_for('AddCart')}}" method="post">
+                      <input type="hidden" name="product_id" value="{{get_gen.id}}">
+                      <button type="submit" class="btn btn-sm btn-warning float-right">{{_("Добавить в корзину")}}</button>
+                      <input type="hidden" name="quantity" value="1" min="1" max="20">
+                      <select name="colors" id="colors" style="visibility: hidden;">
+                          {% for color in colors %}
+                          {% set col = color.split(':') %}
+                          <option value="{{col[0]}}">{{col[0] | capitalize }}</option>
+                          {% endfor %}
+                      </select>
+                  </form>
+                </div>
+            </div>
+          </div>
+
+        {% endfor %}
       </div>
         <!--========= END ELSE IF ===============-->
         <div class="row">
@@ -125,16 +157,16 @@
             <img src="{{url_for('static', filename='images/' + product.image_1)}}" class="card-img-top" alt="{{product.name}}" height="200" width="200">
             <div class="card-body">
                 {% if product.discount > 0 %}
-                <h5 style="text-shadow: 1px 2px 2px #000; color: #f00; transform: rotate(-15deg); position: absolute; top: 23%; left: 25%; font-weight: 600;"> Discount {{product.discount}}</h5>
+                <h5 style="text-shadow: 1px 2px 2px #000; color: #f00; transform: rotate(-15deg); position: absolute; top: 23%; left: 25%; font-weight: 600;"> {{_("Скидка")}} {{product.discount}}</h5>
                 {% endif %}
               <h5 class="text-center">{{product.name}}</h5>
               <p class="text-center">Price ${{product.price}}</p>
             </div>
             <div class="card-footer">
-                <a href="{{url_for('single_page',id=product.id)}}" class="float-left btn btn-sm btn-primary">Details</a>
+                <a href="{{url_for('single_page',id=product.id)}}" class="float-left btn btn-sm btn-primary">{{_("Подробно")}}</a>
                 <form action="{{url_for('AddCart')}}" method="post">
                   <input type="hidden" name="product_id" value="{{product.id}}">
-                  <button type="submit" class="btn btn-sm btn-warning float-right">Add to Cart</button>
+                  <button type="submit" class="btn btn-sm btn-warning float-right">{{_("Добавить в корзину")}}</button>
                   <input type="hidden" name="quantity" value="1" min="1" max="20">
                   {% set colors = product.colors.split(',') %}
                   <select name="colors" id="colors" style="visibility: hidden;">
@@ -150,10 +182,10 @@
         {% endfor %}
       </div>
 
-      <div class="row mt-4">
+      <div -class="row mt-4">
         <div class="col text-center">
           {% if products.has_prev %}
-            <a href="{{url_for('home', page=products.prev_num)}}"class="btn btn-sm btn-outline-info">previus</a>
+            <a href="{{url_for('home', page=products.prev_num)}}"class="btn btn-sm btn-outline-info">{{_("Предыдущий")}}</a>
           {% endif %}
           {% if products.total> 8 %}
          {% for page_num in products.iter_pages(left_edge=1, right_edge=2, left_current=1,right_current=2) %}
@@ -170,7 +202,7 @@
          {% endif %}
          {% if products.has_next %}
          <!-- отвечает за следующие товары -->
-         <a href="{{url_for('home', page=products.next_num)}}"class="btn btn-sm btn-outline-info">next</a>
+         <a href="{{url_for('home', page=products.next_num)}}"class="btn btn-sm btn-outline-info">{{_("следующий")}}</a>
        {% endif %}
         </div>
       </div>

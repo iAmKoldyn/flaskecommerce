@@ -9,6 +9,9 @@ import json
 import pdfkit
 import stripe
 from dotenv import load_dotenv
+from flask_babel import gettext
+from flask_babel import _ 
+
 
 load_dotenv()
 
@@ -51,8 +54,7 @@ def customer_register():
         db.session.add(register)
         flash(f'Здравствуйте! {form.email.data} Спасибо вам за прохождение регистрации', 'success')
         db.session.commit()
-        return redirect(url_for('login'))
-    return render_template('customer/register.html', form=form)
+    return redirect(url_for('home'))
 
 
 @app.route('/customer/login', methods=['GET', 'POST'])
@@ -62,13 +64,12 @@ def customerLogin():
         user = Register.query.filter_by(email=form.email.data).first()
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user)
-            flash('Вы авторизировались!', 'success')
+            flash(gettext('Вы авторизировались!'), 'success')
             next = request.args.get('next')
             return redirect(next or url_for('home'))
-        flash('Неверный логин или пароль', 'danger')
-        return redirect(url_for('customerLogin'))
+        flash(gettext('Неверный логин или пароль'), 'danger')
 
-    return render_template('customer/login.html', form=form)
+    return redirect(url_for('home'))
 
 
 @app.route('/customer/logout')
@@ -97,11 +98,11 @@ def get_order():
             db.session.add(order)
             db.session.commit()
             session.pop('Shoppingcart')
-            flash('Ваш заказ успешно отправлен', 'success')
+            flash(gettext('Ваш заказ успешно отправлен'), 'success')
             return redirect(url_for('orders', invoice=invoice))
         except Exception as e:
             print(e)
-            flash('Что-то пошло не так при получении заказа', 'danger')
+            flash(gettext('Что-то пошло не так при получении заказа'), 'danger')
             return redirect(url_for('getCart'))
 
 

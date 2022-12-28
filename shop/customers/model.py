@@ -2,6 +2,7 @@ from shop import db, login_manager
 from datetime import datetime
 from flask_login import UserMixin
 import json
+from flask_babel import _ 
 
 
 @login_manager.user_loader
@@ -16,7 +17,7 @@ class Register(db.Model, UserMixin):
     date_created = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
     def __repr__(self):
-        return '<Register %r>' % self.name
+        return '<Register %r>' % self.email
 
 
 class JsonEcodedDict(db.TypeDecorator):

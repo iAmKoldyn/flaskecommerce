@@ -1,0 +1,479 @@
+# Translations template for PROJECT.
+# Copyright (C) 2022 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2022-12-28 20:40+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.11.0\n"
+
+#: shop/admin/forms.py:9
+msgid "Имя"
+msgstr "Name"
+
+#: shop/admin/forms.py:10
+msgid "Логин"
+msgstr "Login"
+
+#: shop/admin/forms.py:11
+msgid "Почта"
+msgstr "Email"
+
+#: shop/admin/forms.py:12
+msgid "Пароль"
+msgstr "Passward"
+
+#: shop/admin/forms.py:14
+msgid "Пароль должен содержать"
+msgstr "The password must contain"
+
+#: shop/admin/forms.py:16
+msgid "Повторите пароль"
+msgstr "Confirm password"
+
+#: shop/admin/forms.py:20
+msgid "Такое имя пользователя уже существует."
+msgstr "This username already exists"
+
+#: shop/admin/forms.py:25
+msgid "Пользователь с такой почтой уже существует."
+msgstr "User with this email already exists"
+
+#: shop/admin/forms.py:30
+msgid "Новый пароль"
+msgstr "New Password"
+
+#: shop/admin/routes.py:46 shop/templates/admin/login.html:7
+#: shop/templates/navbar.html:62
+msgid "Вход"
+msgstr "Exit"
+
+#: shop/customers/forms.py:12
+msgid "Почта: "
+msgstr "Email"
+
+#: shop/customers/forms.py:13 shop/customers/forms.py:35
+msgid "Пароль: "
+msgstr "Password"
+
+#: shop/customers/forms.py:15
+msgid "Повторите пароль: "
+msgstr "Confirm password"
+
+#: shop/customers/forms.py:22 shop/templates/customer/register.html:10
+#: shop/templates/index.html:243 shop/templates/index.html:261
+#: shop/templates/navbar.html:59
+msgid "Регистрация"
+msgstr "Registation"
+
+#: shop/customers/forms.py:26
+msgid "Это имя пользователя уже занято!"
+msgstr "This username is already taken!"
+
+#: shop/customers/forms.py:30
+msgid "Аккаунт с такой почтой уже существует!"
+msgstr "An account with this email already exists."
+
+#: shop/customers/routes.py:67
+msgid "Вы авторизировались!"
+msgstr "You are logged in"
+
+#: shop/customers/routes.py:70
+msgid "Неверный логин или пароль"
+msgstr "wrong login or password"
+
+#: shop/customers/routes.py:101
+msgid "Ваш заказ успешно отправлен"
+msgstr "Your order has been successfully sent"
+
+#: shop/customers/routes.py:105
+msgid "Что-то пошло не так при получении заказа"
+msgstr "Something went wrong while receiving the order"
+
+#: shop/products/forms.py:8 shop/templates/admin/brand.html:42
+#: shop/templates/admin/index.html:44 shop/templates/customer/order.html:22
+#: shop/templates/products/carts.html:12
+msgid "Название"
+msgstr "Name"
+
+#: shop/products/forms.py:9 shop/templates/admin/index.html:45
+#: shop/templates/customer/order.html:24 shop/templates/products/carts.html:14
+#: shop/templates/products/index.html:16
+msgid "Цена"
+msgstr "Price"
+
+#: shop/products/forms.py:10 shop/templates/admin/index.html:46
+#: shop/templates/customer/order.html:26 shop/templates/products/carts.html:16
+#: shop/templates/products/index.html:13 shop/templates/products/index.html:70
+#: shop/templates/products/index.html:127
+#: shop/templates/products/index.html:160
+#: shop/templates/products/result.html:12
+#: shop/templates/products/single_page.html:17
+msgid "Скидка"
+msgstr "Discount"
+
+#: shop/products/forms.py:11
+msgid "Кол-во"
+msgstr "quantity"
+
+#: shop/products/forms.py:12 shop/templates/admin/index.html:50
+msgid "Размер"
+msgstr "size"
+
+#: shop/products/forms.py:13 shop/templates/customer/order.html:23
+#: shop/templates/products/carts.html:13
+msgid "Цвет"
+msgstr "color"
+
+#: shop/products/forms.py:14
+msgid "Описание"
+msgstr "Description"
+
+#: shop/products/forms.py:15
+msgid "Гендер"
+msgstr "gender"
+
+#: shop/products/forms.py:17 shop/products/forms.py:19
+#: shop/products/forms.py:21
+msgid "Только изображение"
+msgstr "Image only"
+
+#: shop/products/routes.py:98
+msgid "Сначала войдите в аккаунт!"
+msgstr "Login first"
+
+#: shop/templates/index.html:28
+msgid "Home"
+msgstr "Главная"
+
+#: shop/templates/index.html:34 shop/templates/index.html:79
+#: shop/templates/index.html:124 shop/templates/index.html:169
+msgid "ВСЕ БРЕНДЫ"
+msgstr "ALL BRANDS"
+
+#: shop/templates/index.html:42 shop/templates/index.html:87
+#: shop/templates/index.html:132 shop/templates/index.html:177
+msgid "ВСЕ КАТЕГОРИИ"
+msgstr "ALL CATEGORIES"
+
+#: shop/templates/index.html:56 shop/templates/index.html:101
+#: shop/templates/index.html:146 shop/templates/index.html:191
+msgid "ОДЕЖДА"
+msgstr "CLOTHES"
+
+#: shop/templates/index.html:63 shop/templates/index.html:108
+#: shop/templates/index.html:153 shop/templates/index.html:198
+msgid "ОБУВЬ"
+msgstr "SHOES"
+
+#: shop/templates/index.html:73
+msgid "МУЖСКОЕ"
+msgstr "MALE"
+
+#: shop/templates/index.html:118 shop/templates/index.html:276
+msgid "Женское"
+msgstr "FEMALE"
+
+#: shop/templates/index.html:163
+msgid "Скидки"
+msgstr "Discounts"
+
+#: shop/templates/admin/login/index.html:23
+#: shop/templates/customer/login.html:7 shop/templates/index.html:241
+#: shop/templates/index.html:248
+msgid "Войти"
+msgstr "Login"
+
+#: shop/templates/index.html:269
+msgid "Мужское"
+msgstr "Male"
+
+#: shop/templates/index.html:270 shop/templates/index.html:277
+msgid "СМОТРЕТЬ"
+msgstr "WATCH"
+
+#: shop/templates/index.html:285
+msgid "Недавние товары"
+msgstr "Recent Items"
+
+#: shop/templates/index.html:300 shop/templates/index.html:317
+#: shop/templates/index.html:334 shop/templates/index.html:351
+#: shop/templates/index.html:370 shop/templates/index.html:387
+#: shop/templates/index.html:404 shop/templates/index.html:421
+#: shop/templates/index.html:457 shop/templates/index.html:474
+#: shop/templates/index.html:491 shop/templates/index.html:510
+#: shop/templates/index.html:527 shop/templates/index.html:544
+#: shop/templates/index.html:561
+msgid "Кроссовки"
+msgstr "Sneakers"
+
+#: shop/templates/index.html:584 shop/templates/index.html:600
+msgid "Контакты"
+msgstr "Contact"
+
+#: shop/templates/index.html:591
+msgid "Поддержка"
+msgstr "Support"
+
+#: shop/templates/index.html:592
+msgid "Помощь покупателю"
+msgstr "buyer helper"
+
+#: shop/templates/index.html:593
+msgid "Доставка и оплата"
+msgstr "Shipping and payment"
+
+#: shop/templates/index.html:594
+msgid "Возврат"
+msgstr "Return"
+
+#: shop/templates/index.html:595
+msgid "Программа лояльности"
+msgstr "Loyalty program"
+
+#: shop/templates/index.html:596
+msgid "Партнеры"
+msgstr "Partners"
+
+#: shop/templates/index.html:599
+msgid "Информация"
+msgstr "Information"
+
+#: shop/templates/index.html:601
+msgid "Магазины"
+msgstr "Shops"
+
+#: shop/templates/index.html:602
+msgid "Блог"
+msgstr "Blog"
+
+#: shop/templates/index.html:603
+msgid "Вакансии"
+msgstr "Jobs"
+
+#: shop/templates/index.html:616
+msgid "Наверх"
+msgstr "Up"
+
+#: shop/templates/navbar.html:27
+msgid "Товары"
+msgstr "Products"
+
+#: shop/templates/navbar.html:31
+msgid "БРЕНДЫ"
+msgstr "BRANDS"
+
+#: shop/templates/navbar.html:42
+msgid "КАТЕГОРИИ"
+msgstr "CATEGORY"
+
+#: shop/templates/navbar.html:55
+msgid "Выход"
+msgstr "Exit"
+
+#: shop/templates/navbar.html:66
+msgid "Корзина товаров"
+msgstr "Product cart"
+
+#: shop/templates/navbar.html:86
+msgid "Поиск"
+msgstr "Search"
+
+#: shop/templates/admin/brand.html:12
+msgid "Title"
+msgstr "Тайтл"
+
+#: shop/templates/admin/brand.html:15
+msgid "Brand"
+msgstr "Бренд"
+
+#: shop/templates/admin/brand.html:18
+msgid "Categories"
+msgstr "Категории"
+
+#: shop/templates/admin/brand.html:22
+msgid "Добавление всех тайтлов"
+msgstr "Add all titles"
+
+#: shop/templates/admin/brand.html:25
+msgid "Новый тайтл"
+msgstr "New title"
+
+#: shop/templates/admin/brand.html:26
+msgid "Новый Бренд"
+msgstr "New brand"
+
+#: shop/templates/admin/brand.html:27
+msgid "Новая категория"
+msgstr "New category"
+
+#: shop/templates/admin/brand.html:43 shop/templates/admin/brand.html:52
+#: shop/templates/admin/brand.html:91 shop/templates/admin/index.html:51
+#: shop/templates/admin/index.html:67
+msgid "Редактировать"
+msgstr "Edit"
+
+#: shop/templates/admin/brand.html:44 shop/templates/admin/brand.html:54
+#: shop/templates/admin/brand.html:76 shop/templates/admin/brand.html:93
+#: shop/templates/admin/brand.html:114 shop/templates/admin/index.html:52
+#: shop/templates/admin/index.html:69 shop/templates/admin/index.html:89
+#: shop/templates/products/carts.html:19 shop/templates/products/carts.html:52
+msgid "Удалить"
+msgstr "Delete"
+
+#: shop/templates/admin/brand.html:71
+msgid "Вы уверены, что хотите удалить этот бренд?"
+msgstr "Are you sure you want to remove this brand?"
+
+#: shop/templates/admin/brand.html:74 shop/templates/admin/index.html:87
+msgid "Отмена"
+msgstr "Cancel"
+
+#: shop/templates/admin/brand.html:109
+msgid "Вы уверены, что хотите удалить эту Категорию?"
+msgstr "Are you sure you want to delete this Category?"
+
+#: shop/templates/admin/index.html:12
+msgid "Товар"
+msgstr "Product"
+
+#: shop/templates/admin/index.html:15 shop/templates/admin/index.html:47
+#: shop/templates/products/addbrand.html:16
+#: shop/templates/products/addproduct.html:16
+msgid "Бренд"
+msgstr "Brand"
+
+#: shop/templates/admin/index.html:18
+msgid "категория"
+msgstr "category"
+
+#: shop/templates/admin/index.html:22
+msgid "Добавить Товары"
+msgstr "add products"
+
+#: shop/templates/admin/index.html:25
+msgid "Добавить Товар"
+msgstr "add product"
+
+#: shop/templates/admin/index.html:26 shop/templates/products/addbrand.html:27
+#: shop/templates/products/addproduct.html:27
+msgid "Добавить Бренд"
+msgstr "Add brand"
+
+#: shop/templates/admin/index.html:27 shop/templates/products/addbrand.html:28
+#: shop/templates/products/addproduct.html:28
+msgid "Добавить Категорию"
+msgstr "Add Category"
+
+#: shop/templates/admin/index.html:43 shop/templates/products/carts.html:11
+msgid "Изображение"
+msgstr "Image"
+
+#: shop/templates/admin/index.html:48
+msgid "Пол"
+msgstr "Gender"
+
+#: shop/templates/admin/index.html:49 shop/templates/products/addbrand.html:19
+#: shop/templates/products/addproduct.html:19
+msgid "Категория"
+msgstr "Category"
+
+#: shop/templates/admin/index.html:84
+msgid "Вы уверены, что хотите удалить эту Категорию"
+msgstr "Are you sure you want to delete this Category"
+
+#: shop/templates/customer/order.html:25 shop/templates/products/carts.html:15
+#: shop/templates/products/single_page.html:25
+msgid "Количество"
+msgstr "Quantity"
+
+#: shop/templates/customer/order.html:27 shop/templates/products/carts.html:17
+#: shop/templates/products/carts.html:62
+msgid "Финальная Цена"
+msgstr "Final Price"
+
+#: shop/templates/customer/profile.html:5
+msgid "Профиль"
+msgstr "Profile"
+
+#: shop/templates/customer/thank.html:1
+msgid "Спасибо за покупку!"
+msgstr "Thank you for your purchase"
+
+#: shop/templates/products/addbrand.html:13
+#: shop/templates/products/addproduct.html:13
+msgid "Продукт"
+msgstr "Product"
+
+#: shop/templates/products/addbrand.html:23
+#: shop/templates/products/addproduct.html:23
+msgid "Добавить Продукты"
+msgstr "Add Products"
+
+#: shop/templates/products/addbrand.html:26
+#: shop/templates/products/addproduct.html:26
+#: shop/templates/products/addproduct.html:42
+msgid "Добавить Продукт"
+msgstr "Add Product"
+
+#: shop/templates/products/carts.html:18 shop/templates/products/carts.html:50
+msgid "Обновить"
+msgstr "Update"
+
+#: shop/templates/products/carts.html:59
+msgid "Заказать"
+msgstr "Order"
+
+#: shop/templates/products/carts.html:61
+msgid "Налог"
+msgstr "Tax"
+
+msgid "Очистить корзину"
+msgstr "Clear cart"
+
+#: shop/templates/products/index.html:19 shop/templates/products/index.html:76
+#: shop/templates/products/index.html:133
+#: shop/templates/products/index.html:166
+#: shop/templates/products/result.html:18
+msgid "Подробно"
+msgstr "Detail"
+
+#: shop/templates/products/index.html:22 shop/templates/products/index.html:79
+#: shop/templates/products/index.html:136
+#: shop/templates/products/index.html:169
+#: shop/templates/products/result.html:21
+#: shop/templates/products/single_page.html:24
+msgid "Добавить в корзину"
+msgstr "Add to cart"
+
+#: shop/templates/products/index.html:41 shop/templates/products/index.html:99
+#: shop/templates/products/index.html:188
+msgid "Предыдущий"
+msgstr "Previous"
+
+#: shop/templates/products/index.html:57 shop/templates/products/index.html:115
+#: shop/templates/products/index.html:205
+msgid "следующий"
+msgstr "next"
+
+#: shop/templates/products/single_page.html:12
+msgid "Название продукта"
+msgstr "Product name"
+
+#: shop/templates/products/single_page.html:14
+msgid "Цена продукта"
+msgstr "Product price"
+
+#: shop/templates/products/single_page.html:20
+msgid "Описание продукта"
+msgstr "Product description"

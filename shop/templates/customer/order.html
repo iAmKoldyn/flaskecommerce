@@ -19,12 +19,12 @@
         <table class="table table-sm">
             <thead>
                 <th>Sr</th>
-                <th>Name</th>
-                <th>Color</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Discount</th>
-                <th>Subtotal</th>
+                <th>{{_("Название")}}</th>
+                <th>{{_("Цвет")}}</th>
+                <th>{{_("Цена")}}</th>
+                <th>{{_("Количество")}}</th>
+                <th>{{_("Скидка")}}</th>
+                <th>{{_("Финальная Цена")}}</th>
             </thead>
             <tbody>
                 {% for key, product in orders.orders.items() %}
@@ -77,7 +77,6 @@
                
                 <td> 
                     <form action="{{url_for('get_pdf', invoice=orders.invoice)}}" method="post">
-                        <button type="submit" class="btn btn-info"> Get pdf</button>
                     </form>
                      </td>
            </tr>

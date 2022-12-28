@@ -8,15 +8,15 @@
         <table class="table table-sm">
             <thead>
                 <th>Sr</th>
-                <th>Image</th>
-                <th>Name</th>
-                <th>Color</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Discount</th>
-                <th>Subtotal</th>
-                <th>Update</th>
-                <th>Delete</th>
+                <th>{{_("Изображение")}}</th>
+                <th>{{_("Название")}}</th>
+                <th>{{_("Цвет")}}</th>
+                <th>{{_("Цена")}}</th>
+                <th>{{_("Количество")}}</th>
+                <th>{{_("Скидка")}}</th>
+                <th>{{_("Финальная Цена")}}</th>
+                <th>{{_("Обновить")}}</th>
+                <th>{{_("Удалить")}}</th>
             </thead>
             <tbody>
                 {% for key, product in session['Shoppingcart'].items() %}
@@ -47,20 +47,20 @@
                     {% endif %}
                     {% set subtotal = product.quantity|int * product.price|float  %}
                     <td>${{"%.2f"|format(subtotal - discount|round(1,'floor')) }}</td>
-                    <td><button type="submit" class="btn btn-sm btn-info">Update</button> </td>
+                    <td><button type="submit" class="btn btn-sm btn-info">{{_("Обновить")}}</button> </td>
                 </form>
-                    <td> <a href="{{url_for('deleteitem', id=key)}}" class="btn btn-sm btn-danger">Delete</a></td>
+                    <td> <a href="{{url_for('deleteitem', id=key)}}" class="btn btn-sm btn-danger">{{_("Удалить")}}</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
         <table class="table table-sm">
            <tr>
-               <td> <a href="{{url_for('get_order')}}" class="btn btn-success"> Order now </a> </td>
+               <td> <a href="{{url_for('get_order')}}" class="btn btn-success"> {{_("Заказать")}} </a> </td>
                <td width="35%"></td>
-               <td> <h5>Tax: ${{tax}}</h5></td>
-               <td> <h5>Grand total: ${{grandtotal}}</h3> </td>
-                <td> <a href="{{url_for('clearcart')}}" class="btn btn-danger btn-sm float-right mr-4"> Clear cart</a> </td>
+               <td> <h5>{{_("Налог")}}: ${{tax}}</h5></td>
+               <td> <h5>{{_("Финальная Цена")}}: ${{grandtotal}}</h3> </td>
+                <td> <a href="{{url_for('clearcart')}}" class="btn btn-danger btn-sm float-right mr-4"> {{_("Очистить корзину")}}</a> </td>
            </tr>
         </table>
     </div>
