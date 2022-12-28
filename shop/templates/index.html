@@ -25,7 +25,7 @@
             <li class="menu_child">
                 <div class="menu_text_div">
                     <p class="menu_text">
-                        <a href="">{{ _('Главная') }}</a>
+                        <a href="">{{_('Главная') }}</a>
                     </p>
                 </div>
                 <div class="wrap">
@@ -40,6 +40,7 @@
                         </div>
                         <div class="item_text_block">
                             <h3 class="wrap_text_title">{{ _('ВСЕ КАТЕГОРИИ') }}</h3>
+
                             <ul class="wrap_list">
                                 {% for category in categories %}
                                     <li><a href="/categories/{{ category.id }}">{{ category.name }}</a></li>
@@ -259,7 +260,6 @@
             {{ render_field(registerform.password) }}
             {{ render_field(registerform.confirm) }}
             <button type="submit">{{_("Регистрация")}}</button>
-        </form>
     </div>
 </div>
 <section class="main">
@@ -566,7 +566,7 @@
         </div>
     </div>
     <div class="switch_items">
-        <button class="prev" onclick="prev()"><</button>
+        <button class="prev" onclick="prev()"></button>
         <ul class="list-inline">
             <li class="list-inline-item item-active"></li>
             <li class="list-inline-item"></li>

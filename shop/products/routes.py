@@ -12,6 +12,8 @@ from flask_babel import gettext
 from flask_babel import _ 
 from ..admin.forms import LoginForm
 
+from ..admin.forms import LoginForm
+
 
 def brands():
     brands = Brand.query.join(Addproduct, (Brand.id == Addproduct.brand_id)).all()

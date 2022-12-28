@@ -9,6 +9,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item active">
+<<<<<<< HEAD
               <a class="nav-link" href="{{url_for('admin')}}">{{_("Title")}} <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
@@ -25,6 +26,24 @@
                 <a class="dropdown-item" href="{{url_for('addproduct')}}">{{_("Новый тайтл")}}</a>
                 <a class="dropdown-item" href="{{url_for('addbrand')}}">{{_("Новый Бренд")}}</a>
                 <a class="dropdown-item" href="{{url_for('addcat')}}">{{_("Новая категория")}}</a>
+=======
+              <a class="nav-link" href="{{url_for('admin')}}">Title <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('brands')}}">Brand</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('categories')}}">Сategories</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Adding all titles
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="{{url_for('addproduct')}}">New title</a>
+                <a class="dropdown-item" href="{{url_for('addbrand')}}">new brand</a>
+                <a class="dropdown-item" href="{{url_for('addcat')}}">new category</a>
+>>>>>>> 847093eff4e721badf72c792ea5066222965a100
               </div>
             </li>
           </ul>
@@ -75,7 +94,6 @@
         <form action="{{url_for('deletebrand',id=brand.id)}}" method="post">
           <button type="submit" class="btn btn-danger">{{_("Удалить")}}</button>
         </form>
-        
       </div>
     </div>
   </div>
@@ -107,11 +125,12 @@
             </div>
             <div class="modal-body">
               <p class="text-danger">{{_("Вы уверены, что хотите удалить эту Категорию?")}} ({{ category.name }}) </p>
-            </div>
+                        </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
               <form action="{{url_for('deletecat',id=category.id)}}" method="post">
                 <button type="submit" class="btn btn-danger">{{_("Удалить")}}</button>
+                <button type="submit" class="btn btn-danger">Delete</button>
               </form>
               
             </div>
