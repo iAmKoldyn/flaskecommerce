@@ -114,7 +114,7 @@
     background-color: #F2F2F2;
 }
 
-.list_block p {
+.admin_consumer_items .list_block p {
     max-width: 140px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -140,31 +140,14 @@
     margin: 10px 20px;
 }
 
-/*.uid {*/
-/*    position: absolute;*/
-/*    left: 21px;*/
-/*}*/
 
-/*.fname {*/
-/*    position: absolute;*/
-/*    left: 202px;*/
-/*}*/
+.header_uid, .header_fname, .header_lname, .header_email, .header_num {
+    width: 140px;
+}
 
-/*.lname {*/
-/*    position: absolute;*/
-/*    left: 386px;*/
-/*}*/
-
-/*.email {*/
-/*    position: absolute;*/
-/*    right: 396px;*/
-/*}*/
-
-/*.phone {*/
-/*    position: absolute !important;*/
-/*    right: 202px;*/
-/*    !*display: block;*!*/
-/*}*/
+.header_operation {
+    width: 70px;
+}
 
 .operation {
     background-color: #E6E6E6;
